@@ -42,12 +42,13 @@ const Auth = props =>  {
         })
         const [isSignup , setSignup] =  useState(true)
     
+        const {burgerBuilder , authRedirectPath , onSetAuthRedirectPath} = props
 
     useEffect(()=> {
         if ( !props.buildingBurger && props.authRedirectPath !== '/' ) {
             props.onSetAuthRedirectPath();
         }
-    })
+    } , [burgerBuilder , onSetAuthRedirectPath , authRedirectPath])
         
     
 
